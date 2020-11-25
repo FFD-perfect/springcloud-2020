@@ -1,0 +1,25 @@
+server:
+  port: 3344
+
+spring:
+  application:
+    name: cloud-config-center
+    cloud:
+      config:
+        server:
+          git:
+            uri:https://github.com/FFD-perfect/springcloud-2020.git  #github远程仓库地址
+          #搜索目录
+          search-paths:
+            - springcloud-config
+        #读取分支
+        lable: master
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://eureka7002.com:7002/eureka/
